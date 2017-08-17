@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LoginViewControllerProtocol {
 
+    
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var pwLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,5 +26,23 @@ class ViewController: UIViewController {
     }
 
 
+    
+    
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     
+        if let vc = segue.destination as? LoginViewController {
+            vc.delegate = self
+        }
+        
+     }
+    
+    func send(withId:String, password:String){
+        self.idLabel.text = withId
+        self.pwLabel.text = password
+    }
+    
 }
 

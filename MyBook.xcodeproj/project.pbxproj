@@ -12,6 +12,7 @@
 		983185371F451E34006F9692 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983185351F451E34006F9692 /* Main.storyboard */; };
 		983185391F451E34006F9692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983185381F451E34006F9692 /* Assets.xcassets */; };
 		9831853C1F451E34006F9692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9831853A1F451E34006F9692 /* LaunchScreen.storyboard */; };
+		983185441F4522CC006F9692 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983185431F4522CC006F9692 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		983185381F451E34006F9692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9831853B1F451E34006F9692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9831853D1F451E34006F9692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		983185431F4522CC006F9692 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				983185381F451E34006F9692 /* Assets.xcassets */,
 				9831853A1F451E34006F9692 /* LaunchScreen.storyboard */,
 				9831853D1F451E34006F9692 /* Info.plist */,
+				983185431F4522CC006F9692 /* LoginViewController.swift */,
 			);
 			path = MyBook;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				983185441F4522CC006F9692 /* LoginViewController.swift in Sources */,
 				983185341F451E34006F9692 /* ViewController.swift in Sources */,
 				983185321F451E34006F9692 /* AppDelegate.swift in Sources */,
 			);
