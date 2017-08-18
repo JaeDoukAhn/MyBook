@@ -33,7 +33,7 @@ class BookDetailViewController: UIViewController {
         }
         
 //        self.bookPriceLabel.text = String(newBook.price)
-        self.bookDescriptionLabel.text = newBook.description
+        self.bookDescriptionLabel.text = newBook.desc
         
         //Title 표시
         self.navigationItem.title = newBook.title
