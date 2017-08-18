@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class BookListTableViewController: UITableViewController {
+class BookListTableViewController: UITableViewController, AddBookDelegate {
 
     var books:[Book] = Array()
     
@@ -23,9 +23,14 @@ class BookListTableViewController: UITableViewController {
         let book3 = Book(title: "쉽고 빠르게 배우는 Vue.js 2 프로그래밍 프로그레시브 자바스크립트 프레임워크", writer: "알렉스 키리아키디스 , 코스타스 매니아티스", publisher: "위키북스", coverImage: UIImage(named:"b3")!, price: 19800, description: "이 책은 이제 막 웹 프런트엔드를 시작했거나 기존 프레임워크의 복잡함에 지친 분들을 위한 책입니다. 이 책에서는 기존의 개발 방법을 우선 살펴보고 Vue.js가 어떻게 간결하게 해결하는지 자세히 설명합니다. 각 장에서는 Vue.js의 특성 하나하나를 자세히 설명하고, 메인 프로젝트 외에 연습문제를 통해 스스로 Vue.js를 익힐 기회를 제공합니다. 후반부에는 Vue.js를 지탱하는 최신 개발 방식을 설명합니다. 그리고 실제 프로젝트에서 사용할 수 있는 기법을 상세히 설명합니다.", url:"http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=331405&barcode=9791158390754")
         
         
+        let book4 = Book(title: "iPhone SDK 튜터리얼2", writer: nil, publisher: nil, coverImage: nil, price: nil, description: nil, url: nil)
+        
+        
+        
         self.books.append(book1)
         self.books.append(book2)
         self.books.append(book3)
+        self.books.append(book4)
         
         
         
@@ -65,13 +70,16 @@ class BookListTableViewController: UITableViewController {
             let numFormatter: NumberFormatter = NumberFormatter()
             numFormatter.numberStyle = NumberFormatter.Style.decimal
             
-            let price = book.price
-            let priceStr = numFormatter.string(from: NSNumber(integerLiteral : price))
+//            let price = book.price
+//            let priceStr = numFormatter.string(from: NSNumber(integerLiteral : price))
             
+            if let price = book.price {
+                bookCell.bookPriceLabel.text = numFormatter.string(from: NSNumber(integerLiteral : price))
+            }
             
             bookCell.bookTitleLabel.text = book.title
             bookCell.bookwriterLabel.text = book.writer
-            bookCell.bookPriceLabel.text = priceStr
+//            bookCell.bookPriceLabel.text = priceStr
             bookCell.bookImageView.image = book.coverImage
             return bookCell
         }
@@ -133,21 +141,38 @@ class BookListTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let cell = sender as? UITableViewCell
-        
-        let vc = segue.destination as? BookDetailViewController
-        
-        guard let selectedCell = cell, let detailVC = vc else {
-            return
+        if segue.identifier == "addvc" {
+            if let addVC = segue.destination as? AddBookViewController {
+                addVC.delegate = self
+            }
+            
+            
+            
+        } else if segue.identifier == "detailvc" {
+            let cell = sender as? UITableViewCell
+            
+            let vc = segue.destination as? BookDetailViewController
+            
+            guard let selectedCell = cell, let detailVC = vc else {
+                return
+            }
+            
+            if let idx = self.tableView.indexPath(for: selectedCell) {
+                detailVC.book = self.books[idx.row]
+            }
         }
         
-        if let idx = self.tableView.indexPath(for: selectedCell) {
-            detailVC.book = self.books[idx.row]
-        }
+        
         
         
         
     }
+    
+    func sendNewBook(book:Book) {
+        self.books.append(book)
+        self.tableView.reloadData()
+    }
+
     
 }
 
