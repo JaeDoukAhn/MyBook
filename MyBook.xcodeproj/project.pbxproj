@@ -13,6 +13,11 @@
 		983185391F451E34006F9692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 983185381F451E34006F9692 /* Assets.xcassets */; };
 		9831853C1F451E34006F9692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9831853A1F451E34006F9692 /* LaunchScreen.storyboard */; };
 		983185441F4522CC006F9692 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983185431F4522CC006F9692 /* LoginViewController.swift */; };
+		983185461F455042006F9692 /* BookListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983185451F455042006F9692 /* BookListTableViewController.swift */; };
+		983185481F455A7C006F9692 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983185471F455A7C006F9692 /* Book.swift */; };
+		9831854A1F456333006F9692 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983185491F456333006F9692 /* BookDetailViewController.swift */; };
+		9831854C1F456E72006F9692 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9831854B1F456E72006F9692 /* WebViewController.swift */; };
+		983185501F466CB9006F9692 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9831854F1F466CB9006F9692 /* AddBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		9831853B1F451E34006F9692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9831853D1F451E34006F9692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		983185431F4522CC006F9692 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		983185451F455042006F9692 /* BookListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListTableViewController.swift; sourceTree = "<group>"; };
+		983185471F455A7C006F9692 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		983185491F456333006F9692 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		9831854B1F456E72006F9692 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		9831854F1F466CB9006F9692 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +73,11 @@
 				9831853A1F451E34006F9692 /* LaunchScreen.storyboard */,
 				9831853D1F451E34006F9692 /* Info.plist */,
 				983185431F4522CC006F9692 /* LoginViewController.swift */,
+				983185451F455042006F9692 /* BookListTableViewController.swift */,
+				983185471F455A7C006F9692 /* Book.swift */,
+				983185491F456333006F9692 /* BookDetailViewController.swift */,
+				9831854B1F456E72006F9692 /* WebViewController.swift */,
+				9831854F1F466CB9006F9692 /* AddBookViewController.swift */,
 			);
 			path = MyBook;
 			sourceTree = "<group>";
@@ -141,7 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				983185441F4522CC006F9692 /* LoginViewController.swift in Sources */,
+				983185501F466CB9006F9692 /* AddBookViewController.swift in Sources */,
 				983185341F451E34006F9692 /* ViewController.swift in Sources */,
+				9831854A1F456333006F9692 /* BookDetailViewController.swift in Sources */,
+				983185461F455042006F9692 /* BookListTableViewController.swift in Sources */,
+				9831854C1F456E72006F9692 /* WebViewController.swift in Sources */,
+				983185481F455A7C006F9692 /* Book.swift in Sources */,
 				983185321F451E34006F9692 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

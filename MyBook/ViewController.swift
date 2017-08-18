@@ -18,6 +18,18 @@ class ViewController: UIViewController, LoginViewControllerProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let idStr = UserDefaults.standard.string(forKey: "userId")
+        let pwStr = UserDefaults.standard.string(forKey: "userPassword")
+        
+        if let id = idStr, let pw = pwStr {
+            let welcomeAlert = UIAlertController(title: "My Book", message: "\(id)님 환영합니다.", preferredStyle: .alert)
+            let closeAction = UIAlertAction(title: "닫기", style: .cancel, handler:nil)
+            welcomeAlert.addAction(closeAction)
+            self.present(welcomeAlert, animated: true, completion: nil)
+        } else {
+            self.performSegue(withIdentifier: "loginVC", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +54,15 @@ class ViewController: UIViewController, LoginViewControllerProtocol {
     func send(withId:String, password:String){
         self.idLabel.text = withId
         self.pwLabel.text = password
+        
+        
+        UserDefaults.standard.set(withId, forKey:"userId")
+        UserDefaults.standard.set(password, forKey:"userPassword")
+        
+        
     }
+    
+    
     
 }
 
